@@ -1,93 +1,155 @@
-# Oil Price Shocks and Democratisation
+# Path Dependence and Growth: The Role of Oil in Developing Economies
+
 ## Overview
 
-This project examines whether long-run dependence on oil resources affects economic development through institutional and political channels.
+This Bachelor's thesis examines the relationship between natural-resource dependence, institutional quality, and long-run economic growth in developing economies.
 
-The analysis investigates the relationship between natural-resource abundance, institutional quality, and economic growth across developing economies. The central question is whether oil wealth is associated with weaker institutions and whether differences in institutional quality help explain variation in long-run growth outcomes.
+The analysis investigates whether the effects of oil resources on economic performance depend on the institutional environment in which those resources are managed.
 
-The empirical framework combines an augmented Solow growth model with instrumental variables and panel fixed effects. Oil-resource abundance is instrumented using its lagged value to address concerns about reverse causality and the endogenous relationship between economic development and resource extraction.
+The empirical strategy combines panel-data methods with instrumental variables to address the potential endogeneity between institutions, natural resources, and economic growth.
 
 ## Research Question
 
-How does oil-resource abundance affect long-run economic growth, and to what extent is this relationship mediated by institutional quality?
+> **How does institutional quality shape the relationship between oil resources and economic growth in developing economies?**
 
-The analysis focuses on four dimensions of institutional quality:
-
-Control of corruption
-Protection of property rights
-Absence of political violence
-Bureaucratic quality and rule-based governance
-
-It also examines whether historical colonial institutions condition the relationship between oil resources and institutional outcomes.
+The analysis focuses on whether oil resources are associated with different growth outcomes depending on institutional conditions and historical characteristics.
 
 ## Methodology
 
-The empirical strategy combines an augmented Solow growth framework with panel-data methods.
+The empirical framework is based on an **Augmented Solow growth model** estimated using instrumental variables and two-stage least squares (2SLS).
 
-## Baseline specification
+The baseline specification incorporates:
 
-The growth model incorporates physical capital, human capital, population growth, and oil-resource abundance alongside institutional measures.
+* Physical capital
+* Human capital
+* Labour-market variables
+* Land and geographic characteristics
+* Institutional quality
+* Oil resources
 
-Country and year fixed effects are included to account for unobserved time-invariant country characteristics and common time shocks.
+Country and year fixed effects are included to account for unobserved country characteristics and common time effects.
 
-## Instrumental Variables
+### Instrumental Variables
 
-Oil-resource abundance is potentially endogenous to economic development and institutional outcomes. To address this, the analysis uses the 10-year lag of oil resources as an instrument for contemporary oil-resource abundance.
+Oil resources are instrumented using **lagged oil reserves**, exploiting the persistence of resource endowments while reducing concerns about contemporaneous reverse causality.
 
-The estimation proceeds using two-stage least squares (2SLS).
+The IV strategy is used to investigate the relationship between institutional quality and economic growth while accounting for potential endogeneity.
 
-## Institutional quality
+The instrument should be interpreted as an identification strategy rather than as proof that oil reserves are fully exogenous.
 
-Institutional measures are constructed from the Varieties of Democracy (V-Dem) dataset. The institutional variables capture dimensions including:
+## Institutional Quality
 
-Corruption
-Property rights
-Political violence
-Bureaucratic quality
-Rule of law
+Institutional quality is measured using indicators from the **V-Dem dataset**.
 
-Principal component analysis is used where appropriate to construct composite measures of institutional quality.
+The institutional measure combines several dimensions of political and institutional quality, including:
 
-## Colonial legacy
+* Control of corruption
+* Absence of political violence
+* Property rights
+* Bureaucratic quality
+* Transparent and predictable laws
 
-The analysis also examines interactions between oil resources and historical colonial backgrounds, with particular attention to French and Portuguese colonial legacies.
+Principal Component Analysis (PCA) is used to construct a composite institutional-quality measure from these indicators.
+
+The resulting index provides a multidimensional measure of institutional conditions while reducing the dimensionality of the individual indicators.
+
+## Empirical Framework
+
+The analysis proceeds in two stages.
+
+### First stage
+
+The first stage estimates the relationship between the proposed instrument for oil resources and the endogenous resource variable.
+
+### Second stage
+
+The predicted component of oil resources is then incorporated into the augmented growth regression alongside institutional quality and other controls.
+
+The baseline analysis is estimated using country and year fixed effects.
+
+The analysis also examines whether the relationship varies according to historical and institutional characteristics.
 
 ## Data
 
-The analysis combines several international datasets:
+The analysis combines several international datasets.
 
-Dataset	Variables
-V-Dem	Institutional and political indicators
-World Bank	Macroeconomic and development indicators
-Penn World Table	GDP, capital, labour and productivity measures
-S&P Global	Oil-resource and petroleum data
+### V-Dem
 
-The sample covers developing economies over multiple decades, allowing the analysis to exploit both cross-country and within-country variation.
+Provides measures of:
 
-## Empirical Approach
+* Institutional quality
+* Corruption
+* Political violence
+* Property rights
+* Bureaucratic quality
+* Rule of law and related institutional characteristics
 
-The main workflow is:
+### World Bank
 
-Oil-resource abundance
-          │
-          ▼
-   Institutional quality
-          │
-          ▼
-     Economic growth
+Provides macroeconomic and development indicators used in the growth regressions.
 
-The empirical analysis tests whether oil-resource abundance is systematically associated with institutional outcomes and whether these institutional channels are relevant for long-run economic performance.
+### Penn World Table
 
-The analysis also separates the overall institutional relationship into specific mechanisms, allowing the results to distinguish between corruption, property rights, political stability, and other institutional dimensions.
+Provides measures of:
 
-## Main Findings
+* Economic output
+* Capital
+* Labour
+* Productivity
+* Other national-account variables
 
-The baseline estimates indicate a negative relationship between institutional quality and the oil-resource variable in the empirical specification, with the estimated coefficient remaining negative across robustness specifications.
+### S&P Global
 
-The baseline institutional coefficient is approximately −0.55, while the main robustness specification produces an estimate of approximately −0.49.
+Provides information on oil reserves and natural-resource endowments used in the empirical analysis.
 
-The interaction analysis finds stronger estimated relationships for countries with French and Portuguese colonial histories, with coefficients of approximately −1.27 and −1.23, respectively.
+## Main Results
 
-Among the institutional channels examined, corruption provides the clearest evidence of a potential mechanism linking resource abundance to institutional outcomes. The evidence for property rights is weaker, including an insignificant first-stage relationship in the relevant specification.
+The baseline estimates indicate a negative association between the institutional measure and economic growth conditional on the model specification and identification strategy.
 
-These results should be interpreted as evidence from the specified empirical framework rather than as a definitive causal decomposition of the resource-growth relationship.
+The estimated institutional coefficient is approximately:
+
+* **−0.55** in the baseline specification
+* **−0.49** in the robustness specification
+
+The analysis also examines whether historical institutional characteristics modify this relationship.
+
+The estimated interaction effects for countries with French and Portuguese colonial histories are approximately:
+
+* French: **−1.27**
+* Portuguese: **−1.23**
+
+These estimates should be interpreted within the specific sample, model, and identification strategy used in the thesis rather than as universal effects of colonial history.
+
+## Mechanisms
+
+The thesis examines individual institutional dimensions to investigate potential channels behind the aggregate institutional relationship.
+
+Among the institutional components, **corruption** provides the clearest empirical channel in the analysis.
+
+The property-rights component, in contrast, does not produce a statistically strong first-stage relationship with the relevant resource measure in the specifications examined.
+
+These results suggest that different dimensions of institutional quality may operate differently rather than representing a single homogeneous institutional mechanism.
+
+## Empirical Workflow
+
+```text
+International Data
+        ↓
+Country-Year Panel
+        ↓
+Oil Resources + Development Variables
+        ↓
+Institutional Quality Indicators
+        ↓
+PCA Institutional Index
+        ↓
+Augmented Solow Model
+        ↓
+Instrumental Variables / 2SLS
+        ↓
+Country + Year Fixed Effects
+        ↓
+Robustness & Institutional Channels
+        ↓
+Economic Growth Results
+```
